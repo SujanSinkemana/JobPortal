@@ -1,0 +1,15 @@
+{% extends 'layouts/base_home.html' %}
+{% load crispy_forms_tags %}
+{% block in_content %}
+<h1>{{ title }}</h1>
+<form method="post" action="{% url 'contact' %}">
+  {% csrf_token %}
+  {{ form|crispy }}
+  <button style="margin-top: 20px; margin-bottom: 20px" type="submit" class="btn btn-outline-success">
+    Submit
+  </button>
+</form>
+<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d28267.418103150434!2d85.40219475!3d27.673186450000003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2snp!4v1696743754753!5m2!1sen!2snp" width="600" height="450" style="border:0; width:100%" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+{% endblock %}
+
+
